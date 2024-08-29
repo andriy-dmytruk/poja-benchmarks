@@ -8,7 +8,7 @@ The image sizes are:
 
 The time to first response:
 * demo-poja: `0.01092s`
-* demo-netty: `.001372s`
+* demo-netty: `0.001372s`
 
 # demo-poja
 
@@ -77,20 +77,20 @@ Top 10 origins of code area:                                Top 10 object types 
 You can change the `micronaut-maven-plugin` configuration with additional build args:
 
 ```xml
-      <plugin>
-        <groupId>io.micronaut.maven</groupId>
-        <artifactId>micronaut-maven-plugin</artifactId>
-        <configuration>
-          <configFile>aot-${packaging}.properties</configFile>
-          <nativeImageBuildArgs>
+<plugin>
+    <groupId>org.graalvm.buildtools</groupId>
+    <artifactId>native-maven-plugin</artifactId>
+    <configuration>
+        <buildArgs combine.children="append">
             <!-- one of G1, serial (default), and epsilon -->
-            <nativeImageBuildArg>--gc=serial</nativeImageBuildArg>
+            <buildArg>--gc=serial</buildArg>
             <!--
              The install-exit-handlers option gives you the same signal handlers that a JVM does.
              This enables us to dump threa stack using kill -3 for example.
             -->
-            <nativeImageBuildArg>--install-exit-handlers</nativeImageBuildArg>
-          </nativeImageBuildArgs>
-        </configuration>
-      </plugin>
+            <buildArg>--install-exit-handlers</buildArg>
+            <buildArg>-H:+BuildReport</buildArg>
+        </buildArgs>
+    </configuration>
+</plugin>
 ```

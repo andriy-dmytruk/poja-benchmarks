@@ -80,6 +80,22 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.graalvm.buildtools</groupId>
+        <artifactId>native-maven-plugin</artifactId>
+        <configuration>
+          <buildArgs combine.children="append">
+            <!-- one of G1, serial (default), and epsilon -->
+            <buildArg>--gc=serial</buildArg>
+            <!--
+             The install-exit-handlers option gives you the same signal handlers that a JVM does.
+             This enables us to dump threa stack using kill -3 for example.
+            -->
+            <buildArg>--install-exit-handlers</buildArg>
+            <buildArg>-H:+BuildReport</buildArg>
+          </buildArgs>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>io.micronaut.maven</groupId>
         <artifactId>micronaut-maven-plugin</artifactId>
         <configuration>
