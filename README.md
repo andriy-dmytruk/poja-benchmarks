@@ -14,7 +14,7 @@ The image sizes are:
 The time to first response (average over 100 runs):
 | | `demo-poja` | `demo-netty` |
 | --- | --- | --- |
-| OL8 GraalVM CE 22 | `0.010920s` | `0.001372s` |
+| OL8 GraalVM CE 22 | `0.010920s` | `0.01372s` |
 | OL8 GraalVM CE 22 `quickBuild=true` | `0.012086` | `0.015768s` |
 
 # demo-poja
