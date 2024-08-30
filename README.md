@@ -3,8 +3,12 @@ A repo for testing Micronaut netty and poja performance with native image and sy
 # Results
 
 The image sizes are:
-* demo-poja: `44Mb` on MacOS GraalVM 21, `48Mb` on Oracle Linux GraalVM 22
-* demo-netty: `53Mb` on MacOS GraalVM 21, `60Mb` on Oracle Linux GraalVM 22
+| | `demo-poja` | `demo-netty` |
+| --- | --- | --- |
+| MacOS GraalVM CE 21 | `44Mb` | `53Mb` |
+| OL8 GraalVM CE 22 | `48Mb` | `60Mb` |
+| MacOS GraalVM EE 21 | `45Mb` | `57Mb` |
+| MacOS GraalVM EE 21 `quickBuild=true` | `36Mb` |  `43Mb` |
 
 The time to first response:
 * demo-poja: `0.01092s`
@@ -91,6 +95,7 @@ You can change the `micronaut-maven-plugin` configuration with additional build 
             <buildArg>--install-exit-handlers</buildArg>
             <buildArg>-H:+BuildReport</buildArg>
         </buildArgs>
+        <quickBuild>${native.quickBuild}</quickBuild>
     </configuration>
 </plugin>
 ```

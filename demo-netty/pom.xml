@@ -21,6 +21,7 @@
     <micronaut.aot.enabled>false</micronaut.aot.enabled>
     <micronaut.aot.packageName>com.example.aot.generated</micronaut.aot.packageName>
     <exec.mainClass>com.example.Application</exec.mainClass>
+    <native.quickBuild>false</native.quickBuild>
   </properties>
 
   <repositories>
@@ -93,6 +94,7 @@
             <buildArg>--install-exit-handlers</buildArg>
             <buildArg>-H:+BuildReport</buildArg>
           </buildArgs>
+          <quickBuild>${native.quickBuild}</quickBuild>
         </configuration>
       </plugin>
       <plugin>
