@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 systemd-socket-activate --inetd -a -l /tmp/http-poja.sock $(pwd)/demo-poja/target/demo-poja &
+# For jar: systemd-socket-activate --inetd -a -l /tmp/http-poja.sock $(pwd)/demo-poja/target/demo-poja-0.1.jar &
 PID=$!
 
 total=0

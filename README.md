@@ -16,6 +16,19 @@ The time to first response (average over 100 runs):
 | --- | --- | --- |
 | OL8 GraalVM CE 22 | `0.010920s` | `0.01372s` |
 | OL8 GraalVM CE 22 `quickBuild=true` | `0.012086` | `0.015768s` |
+| OL8 GraalVM CE 22 non-native image | `1.15598s` | `1.46136s` |
+
+The OL8 instance is VM.Standard.E5.Flex 1 OCPU 16Gb:
+* x86_64, `AMD EPYC 7J13 64-Core Processor`, 2 CPUs, 2445.404MHz
+
+The memory usage measured with `top -o %MEM` in `RES` column is:
+| | `demo-poja` | `demo-netty` |
+| --- | --- | --- |
+| OL8 GraalVM CE 22 `quickBuild=true` before request | `28428` | `46360` |
+| OL8 GraalVM CE 22 `quickBuild=true` during request | `28456` | `48192` |
+| OL8 GraalVM CE 22 `quickBuild=true` after response | `29084` | `50740` |
+
+Note, that the netty executable is not shutdown after response and is left around running.
 
 # demo-poja
 
@@ -104,3 +117,9 @@ You can change the `micronaut-maven-plugin` configuration with additional build 
     </configuration>
 </plugin>
 ```
+
+To run the non-native image version build with
+```shell
+./mvnw package
+```
+and uncomment corresponding lines in the scripts.

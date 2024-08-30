@@ -2,6 +2,7 @@
 
 args="-Dmicronaut.server.netty.listeners.inetd.family=UNIX -Dmicronaut.server.netty.listeners.inetd.server-socket=false -Dmicronaut.server.netty.listeners.inetd.accepted-fd=0 -Dmicronaut.server.netty.listeners.inetd.bind=false"
 systemd-socket-activate --inetd -a -l /tmp/http-netty.sock $(pwd)/demo-netty/target/demo-netty $args &
+# For jar: systemd-socket-activate --inetd -a -l /tmp/http-netty.sock $(pwd)/demo-netty/target/demo-netty-0.1.jar $args &
 PID=$!
 
 total=0
