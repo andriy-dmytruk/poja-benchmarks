@@ -7,12 +7,15 @@ The image sizes are:
 | --- | --- | --- |
 | MacOS GraalVM CE 21 | `44Mb` | `53Mb` |
 | OL8 GraalVM CE 22 | `48Mb` | `60Mb` |
+| OL8 GraalVM CE 22 `quickBuild=true` | `35Mb` | `43Mb` |
 | MacOS GraalVM EE 21 | `45Mb` | `57Mb` |
 | MacOS GraalVM EE 21 `quickBuild=true` | `36Mb` |  `43Mb` |
 
-The time to first response:
-* demo-poja: `0.01092s`
-* demo-netty: `0.001372s`
+The time to first response (average over 100 runs):
+| | `demo-poja` | `demo-netty` |
+| --- | --- | --- |
+| OL8 GraalVM CE 22 | `0.010920s` | `0.001372s` |
+| OL8 GraalVM CE 22 `quickBuild=true` | `0.012086` | `0.015768s` |
 
 # demo-poja
 
@@ -20,6 +23,7 @@ The project was created by selecting `graalvm`, `http-poja` and `slf4j-simple` i
 
 Add the TestController.
 
+Run (add `-Dnative.quickBuild=true` for quick native build):
 ```shell
 cd demo-poja
 ./mvnw package -Dpackaging=native-image
@@ -51,6 +55,7 @@ The project was created by selecting `graalvm` and `slf4j-simple` in Micronaut L
 
 Add the TestController and AppContextConfigurer.
 
+Run (add `-Dnative.quickBuild=true` for quick native build):
 ```shell
 cd demo-netty
 ./mvnw package -Dpackaging=native-image

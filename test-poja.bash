@@ -7,7 +7,7 @@ total=0
 for i in {1..100}; do
   result=$(curl -o /dev/null -s -w "%{http_code}|%{time_total}" --unix-socket /tmp/http-poja.sock http://localhost/)
   if [[ ! $result =~ 200\|([0-9.]+) ]]; then
-    echo "Non-200 response"
+    echo "Non-200 response:" $result
     kill $PID && wait $PID
     exit
   fi
