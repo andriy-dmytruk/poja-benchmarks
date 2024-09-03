@@ -21,9 +21,18 @@ The time to first response (average over 100 runs):
 The OL8 instance is VM.Standard.E5.Flex 1 OCPU 16Gb:
 * x86_64, `AMD EPYC 7J13 64-Core Processor`, 2 CPUs, 2445.404MHz
 
+The memory usage measured with `pmap -X $(pgrep -f demo-poja | sed -n -e '1p') |  sed -n -e '2p;$p'`:
+| | `demo-poja` | `demo-netty` |
+| --- | --- | --- |
+| OL8 GraalVM CE 22 RSS | `6556` | `6672` |
+| OL8 GraalVM CE 22 PSS | `1097` | `1046` |
+
 The memory usage measured with `top -o %MEM` in `RES` column is:
 | | `demo-poja` | `demo-netty` |
 | --- | --- | --- |
+| OL8 GraalVM CE 22 before request | `35548` | `` |
+| OL8 GraalVM CE 22 during request | `33556` | `` |
+| OL8 GraalVM CE 22 after response | `35228` | `` |
 | OL8 GraalVM CE 22 `quickBuild=true` before request | `28428` | `46360` |
 | OL8 GraalVM CE 22 `quickBuild=true` during request | `28456` | `48192` |
 | OL8 GraalVM CE 22 `quickBuild=true` after response | `29084` | `50740` |
