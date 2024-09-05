@@ -1,0 +1,225 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.micronaut.oraclecloud",
+    "module": "micronaut-oraclecloud-httpclient-netty",
+    "version": "4.2.1-proxy-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.micronaut",
+          "module": "micronaut-inject",
+          "version": {
+            "requires": "4.7.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.oracle.oci.sdk",
+          "module": "oci-java-sdk-bom",
+          "version": {
+            "requires": "3.47.0"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          }
+        },
+        {
+          "group": "com.oracle.oci.sdk",
+          "module": "oci-java-sdk-common-httpclient",
+          "version": {
+            "requires": "3.47.0"
+          }
+        },
+        {
+          "group": "io.micronaut.serde",
+          "module": "micronaut-serde-api",
+          "version": {
+            "requires": "2.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "micronaut-oraclecloud-httpclient-netty-4.2.1-proxy-SNAPSHOT.jar",
+          "url": "micronaut-oraclecloud-httpclient-netty-4.2.1-proxy-SNAPSHOT.jar",
+          "size": 141052,
+          "sha512": "c09fbb9bd30513f4fc5d215823d7c0ac7e584189abbd60dc646c33a4b27a0f36ff267ad14049597d62c26f43587fab24213b26553917f25166268977bfd52911",
+          "sha256": "14a8f81db2d5aa736c4d76d8d4d3fe64ec31ff020231270ea1492ecfd70e8087",
+          "sha1": "f30ee11a1e94d483bfc2d18439489277caa9c068",
+          "md5": "78886ca32fa453ad16f1575bb558f958"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "io.netty",
+          "module": "netty-codec-http",
+          "version": {
+            "requires": "4.1.112.Final"
+          }
+        },
+        {
+          "group": "com.oracle.oci.sdk",
+          "module": "oci-java-sdk-common",
+          "version": {
+            "requires": "3.47.0"
+          },
+          "excludes": [
+            {
+              "group": "com.fasterxml.jackson.core",
+              "module": "jackson-databind"
+            }
+          ]
+        },
+        {
+          "group": "io.micronaut",
+          "module": "micronaut-http-client",
+          "version": {
+            "requires": "4.7.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "io.projectreactor",
+          "module": "reactor-core",
+          "version": {
+            "requires": "3.6.9"
+          }
+        },
+        {
+          "group": "io.micronaut.serde",
+          "module": "micronaut-serde-support",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "io.micronaut.serde",
+          "module": "micronaut-serde-jackson",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "io.micronaut",
+          "module": "micronaut-inject",
+          "version": {
+            "requires": "4.7.0-SNAPSHOT"
+          }
+        },
+        {
+          "group": "com.oracle.oci.sdk",
+          "module": "oci-java-sdk-bom",
+          "version": {
+            "requires": "3.47.0"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          }
+        },
+        {
+          "group": "com.oracle.oci.sdk",
+          "module": "oci-java-sdk-common-httpclient",
+          "version": {
+            "requires": "3.47.0"
+          }
+        },
+        {
+          "group": "io.micronaut.serde",
+          "module": "micronaut-serde-api",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "io.micronaut",
+          "module": "micronaut-core-bom",
+          "version": {
+            "requires": "4.7.0-SNAPSHOT"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        }
+      ],
+      "files": [
+        {
+          "name": "micronaut-oraclecloud-httpclient-netty-4.2.1-proxy-SNAPSHOT.jar",
+          "url": "micronaut-oraclecloud-httpclient-netty-4.2.1-proxy-SNAPSHOT.jar",
+          "size": 141052,
+          "sha512": "c09fbb9bd30513f4fc5d215823d7c0ac7e584189abbd60dc646c33a4b27a0f36ff267ad14049597d62c26f43587fab24213b26553917f25166268977bfd52911",
+          "sha256": "14a8f81db2d5aa736c4d76d8d4d3fe64ec31ff020231270ea1492ecfd70e8087",
+          "sha1": "f30ee11a1e94d483bfc2d18439489277caa9c068",
+          "md5": "78886ca32fa453ad16f1575bb558f958"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "micronaut-oraclecloud-httpclient-netty-4.2.1-proxy-SNAPSHOT-sources.jar",
+          "url": "micronaut-oraclecloud-httpclient-netty-4.2.1-proxy-SNAPSHOT-sources.jar",
+          "size": 47126,
+          "sha512": "5413359c6a64de12641c12b80eb2968cfff775523573d01fad367d22ac403ef43d15923dfbe93e7d12b2ac62137242be09941f2d0abff46387d8854098a967a2",
+          "sha256": "49296467bbb26831317d1a11317b0b3f0394ed096b1f8cb3d652a34c03922fda",
+          "sha1": "4480b7f583a1386bba4cae80847c9419ed59def7",
+          "md5": "a9b7ebce911d71a727666aedcb26c3cf"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "micronaut-oraclecloud-httpclient-netty-4.2.1-proxy-SNAPSHOT-javadoc.jar",
+          "url": "micronaut-oraclecloud-httpclient-netty-4.2.1-proxy-SNAPSHOT-javadoc.jar",
+          "size": 108143,
+          "sha512": "2b0b270136672b323861d4c3311125c6221df468b3e32d95b9f50daa081f049e23ad4b7f4b702cf163f25e69fdd477ffdbcf3361ec70169283941a34ef5d1714",
+          "sha256": "add5738076943fe44882752e2bca9489107ded6581cd796eb285ed10f440e453",
+          "sha1": "b0503b6b21e6a44b46c8efec81b03ab8f4ad3f65",
+          "md5": "b81ca3a3d298eda9c899521be1ab6219"
+        }
+      ]
+    }
+  ]
+}

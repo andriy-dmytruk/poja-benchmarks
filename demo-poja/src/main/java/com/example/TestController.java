@@ -15,6 +15,9 @@
  */
 package com.example;
 
+import com.oracle.bmc.objectstorage.ObjectStorage;
+import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
+import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpStatus;
@@ -33,6 +36,18 @@ import io.micronaut.http.annotation.Status;
  */
 @Controller(value = "/", produces = MediaType.TEXT_PLAIN, consumes = MediaType.ALL)
 public class TestController {
+
+    private ObjectStorage client;
+
+    public TestController(ObjectStorage client) {
+        this.client = client;
+    }
+
+    @Get("/ns")
+    public final String ns() {
+        GetNamespaceResponse response = client.getNamespace(GetNamespaceRequest.builder().build());
+        return response.getValue();
+    }
 
     @Get
     public final String index() {

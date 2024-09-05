@@ -22,6 +22,9 @@
     <micronaut.aot.packageName>com.example.aot.generated</micronaut.aot.packageName>
     <exec.mainClass>com.example.Application</exec.mainClass>
     <native.quickBuild>false</native.quickBuild>
+
+    <micronaut.core.version>4.7.0-SNAPSHOT</micronaut.core.version>
+    <micronaut.oraclecloud.version>4.2.0</micronaut.oraclecloud.version>
   </properties>
 
   <repositories>
@@ -39,9 +42,26 @@
       <id>central</id>
       <url>https://repo.maven.apache.org/maven2</url>
     </repository>
+    <repository>
+      <id>project-local</id>
+      <url>file://${project.basedir}/tmp-repository</url>
+    </repository>
   </repositories>
 
   <dependencies>
+    <dependency>
+      <groupId>io.micronaut.oraclecloud</groupId>
+      <artifactId>micronaut-oraclecloud-bmc-objectstorage</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.oraclecloud</groupId>
+      <artifactId>micronaut-oraclecloud-httpclient-netty</artifactId>
+      <version>4.2.1-proxy-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-http-client</artifactId>
+    </dependency>
     <dependency>
       <groupId>io.micronaut.serde</groupId>
       <artifactId>micronaut-serde-jackson</artifactId>
@@ -56,11 +76,6 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-http-client</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.micronaut.servlet</groupId>

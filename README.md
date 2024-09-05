@@ -1,3 +1,39 @@
+# oci-sdk PR
+
+This PR modifies the demo-poja to use OCI SDK client that send unsigned requests via unix socket.
+
+* Create a socket:
+  ```shell
+  nc -lkU /tmp/proxy.sock
+  ```
+* Run the application
+  ```shell
+  cd demo-poja
+  mvn package
+  java -jar ./target/demo-poja-0.1.jar
+  ```
+* Send the request
+  ```shell
+  GET /ns HTTP/1.1
+  Host: h
+  
+  ```
+* See logs for socket
+  ```shell
+  GET https://objectstorage.ca-toronto-1.oraclecloud.com/n HTTP/1.1
+  Accept: application/json
+  opc-client-retries: true
+  opc-request-id: DAB78C78E1F44F66B16F77556590A296
+  User-Agent: Oracle-JavaSDK/3.47.0 (Mac OS X/14.6.1; Java/21.0.4; Java HotSpot(TM) 64-Bit Server VM/21.0.4+8-LTS-jvmci-23.1-b41)
+  opc-client-info: Oracle-JavaSDK/3.47.0
+  host: objectstorage.ca-toronto-1.oraclecloud.com
+  connection: keep-alive
+  content-length: 0
+  ```
+
+# Repo
+
+
 A repo for testing Micronaut netty and poja performance with native image and systemd.
 
 # Results

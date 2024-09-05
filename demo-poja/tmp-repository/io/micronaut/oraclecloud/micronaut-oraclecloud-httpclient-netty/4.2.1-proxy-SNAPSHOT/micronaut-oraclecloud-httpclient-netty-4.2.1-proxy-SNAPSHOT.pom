@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata,  -->
+  <!-- which should be used instead. Do not delete the following line which  -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.micronaut.oraclecloud</groupId>
+  <artifactId>micronaut-oraclecloud-httpclient-netty</artifactId>
+  <version>4.2.1-proxy-SNAPSHOT</version>
+  <name>Micronaut Oracle Cloud</name>
+  <description>Provides integration between Micronaut and Oracle Cloud</description>
+  <url>https://micronaut.io</url>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>graemerocher</id>
+      <name>Graeme Rocher</name>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git@github.com:micronaut-projects/micronaut-oracle-cloud.git</connection>
+    <developerConnection>scm:git@github.com:micronaut-projects/micronaut-oracle-cloud.git</developerConnection>
+    <url>scm:git@github.com:micronaut-projects/micronaut-oracle-cloud.git</url>
+  </scm>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <artifactId>oci-java-sdk-bom</artifactId>
+        <version>3.47.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.micronaut</groupId>
+        <artifactId>micronaut-core-bom</artifactId>
+        <version>4.7.0-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-inject</artifactId>
+      <version>4.7.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common-httpclient</artifactId>
+      <version>3.47.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.serde</groupId>
+      <artifactId>micronaut-serde-api</artifactId>
+      <version>2.11.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-codec-http</artifactId>
+      <version>4.1.112.Final</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common</artifactId>
+      <version>3.47.0</version>
+      <scope>runtime</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-http-client</artifactId>
+      <version>4.7.0-SNAPSHOT</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-core</artifactId>
+      <version>3.6.9</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.serde</groupId>
+      <artifactId>micronaut-serde-support</artifactId>
+      <version>2.11.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.serde</groupId>
+      <artifactId>micronaut-serde-jackson</artifactId>
+      <version>2.11.0</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
